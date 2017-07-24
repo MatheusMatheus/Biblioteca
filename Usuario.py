@@ -10,3 +10,4 @@ class Usuario:
 
     @emprestimo.setter
     def emprestimo(self):
+        
