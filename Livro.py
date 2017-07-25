@@ -6,5 +6,3 @@ class Livro:
         self.autor = autor
         self.codigoSessao = codigoSessao
         self.emprestado = emprestado
-
-    

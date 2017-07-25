@@ -5,4 +5,6 @@ class Emprestimo:
         self.livros = livros
         self.dataInicial = dataInicial
         self.dataFinal = dataFinal
-        self.livros = [] if livros is None else self.livros = livros
+        self.livros = [] if livros is None else livros
+
+        
