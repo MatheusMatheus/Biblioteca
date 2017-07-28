@@ -1,8 +1,12 @@
 from BibliotecaNegocio import BibliotecaNegocio
+from Emprestimo import Emprestimo
 
 biblioteca = BibliotecaNegocio()
 biblioteca.addLivros()
-livro_isbn = biblioteca.selecionaLivro()
-biblioteca.realizaReserva(livro_isbn)
+biblioteca.addUsuarios()
 
-biblioteca.mostraLivrosReservados()
+usuario = biblioteca.selecionaUsuario()
+livro = biblioteca.selecionaLivro()
+biblioteca.efetivaEmprestimo(usuario, livro)
+#emprestimo = Emprestimo()
+#emprestimo.realizaEmprestimo()
