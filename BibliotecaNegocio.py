@@ -41,17 +41,15 @@ class BibliotecaNegocio:
 
 
 
-    def efetivaEmprestimo(self, usuario, livro):
+    def efetivaEmprestimo(self, usuario, livrosSelecionados):
         encontrado = False
-        if livro in self.livrosDisponiveis:
-            self.livrosReservados[livro] = self.livrosDisponiveis.pop(livro)
-            self.livrosReservados[livro].emprestado = True
-            self.usuarios[usuario].livros = self.livrosReservados[livro]
-            encontrado = True
-
-        if not encontrado:
-            print("Livro {} não encontrado".format(livro))
-        
+        for livSelect in livrosSelecionados:
+            for livsDisp in self.livrosDisponiveis:
+                if livSelect is livsDisp:
+                    self.livrosReservados[livsDisp] = self.livrosDisponiveis.pop(livsDisp)
+                    self.livrosReservados[livsDisp].emprestado = True
+                    encontrado = True
+       
 
 
     def validaUsuario(self, usuario):
@@ -85,15 +83,17 @@ class BibliotecaNegocio:
                 return matricula
             else:
                 print("Matrícula não encontrada\nTente novamente\n")
-                
+                os.system("pause")    
+                os.system("cls")    
+                                
 
     def selecionaLivro(self):
         while True:
-            os.system("cls")
             self.mostraLivrosDisponiveis()
             isbn = int(Leitura.lerInteiro("Informe o ISBN do livro: "))
             if isbn in self.livrosDisponiveis.keys():
                 return isbn
             else:
                 print("ISBN não encontrado\nTente novamente\n")
-                os.system("pause")        
+                os.system("pause")    
+                os.system("cls")    

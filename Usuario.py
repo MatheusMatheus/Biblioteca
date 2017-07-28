@@ -12,6 +12,9 @@ class Usuario:
     def __str__(self):
         return "\nMatrícula {}\n\t{}\n\t{}\n\t{}\n\t{}\n".format(self.matricula, self.nome, self.email, self.endereco, self.telefone)
 
+    @livros.setter
+    def livros(self, livros):
+        self.livros = livros
 ''' 
     @property
     def email(self):
