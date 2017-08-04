@@ -49,6 +49,7 @@ class BibliotecaNegocio:
                     self.livrosReservados[livsDisp] = self.livrosDisponiveis.pop(livsDisp)
                     self.livrosReservados[livsDisp].emprestado = True
                     encontrado = True
+                    usuario.livros = livrosSelecionados
        
 
 
@@ -96,4 +97,5 @@ class BibliotecaNegocio:
             else:
                 print("ISBN não encontrado\nTente novamente\n")
                 os.system("pause")    
-                os.system("cls")    
+                os.system("cls")   
+

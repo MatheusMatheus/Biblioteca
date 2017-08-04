@@ -9,7 +9,6 @@ class Emprestimo(object):
         self.dataFinal = None
         self.usuario = None
        
-
     def realizaEmprestimo(self):
         self.usuario = self.biblioteca.selecionaUsuario()
         self.livros = self.escolherLivros()
